@@ -1,0 +1,108 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin header-breakpoint($point) {
+  @if $point == sm {
+    @media (max-width: 840px) {
+      @content;
+    }
+  }
+}
+
+@mixin adbar-breakpoint($point) {
+  @if $point == l {
+    @media (max-width: 1456px) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (max-width: 1389px) {
+      @content;
+    }
+  }
+}
+
+@mixin hero-breakpoint($point) {
+  @if $point == l {
+    @media (max-width: 1456px) {
+      @content;
+    }
+  } @else if $point == xmd {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (max-width: 1236px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (max-width: 815px) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (max-width: 415px) {
+      @content;
+    }
+  } @else if $point == xxs {
+    @media (max-width: 354px) {
+      @content;
+    }
+  }
+}
+
+@mixin horizontal-breakpoint($point) {
+  @if $point == xl {
+    @media (max-width: 1410px) {
+      @content;
+    }
+  } @else if $point == l {
+    @media (max-width: 1253px) {
+      @content;
+    }
+  } @else if $point == m {
+    @media (max-width: 420px) {
+      @content;
+    }
+  }
+}
+
+@mixin vertical-breakpoint($point) {
+  @if $point == xl {
+    @media (max-width: 1237px) {
+      @content;
+    }
+  } @else if $point == l {
+    @media (max-width: 495px) {
+      @content;
+    }
+  }
+}
+
+@mixin footer-breakpoint($point) {
+  @if $point == xl {
+    @media (max-width: 996px) {
+      @content;
+    }
+  } @else if $point == l {
+    @media (max-width: 467px) {
+      @content;
+    }
+  }
+}
+
+@mixin secondpage-breakpoint($point) {
+  @if $point == xl {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $point == l {
+    @media (max-width: 561px) {
+      @content;
+    }
+  } @else if $point == m {
+    @media (max-width: 483px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,532 @@
+@import "./_mixins.scss";
+
+body {
+  font-family: "Kanit", sans-serif;
+  .container {
+    margin-left: 156px;
+    margin-right: 156px;
+
+    @include hero-breakpoint(sm) {
+      margin-left: 22px;
+      margin-right: 22px;
+    }
+
+    .header {
+      @include flex-center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .header-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 320px;
+        margin-top: 20px;
+        @include header-breakpoint(sm) {
+          display: none;
+        }
+
+        .header-button-active {
+          background-color: #191919;
+          color: white;
+          border-radius: 24px;
+          width: 104px;
+          height: 40px;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+        .header-button-inactive {
+          background-color: white;
+          color: #191919;
+          border-radius: 24px;
+          //width: 104px;
+          height: 40px;
+          font-size: 14px;
+          text-transform: uppercase;
+          padding: 10px;
+          font-weight: 600;
+        }
+      }
+      .header-mobile-menu {
+        display: none;
+        @include header-breakpoint(sm) {
+          display: flex;
+          margin-top: 30px;
+        }
+      }
+    }
+    .black-underline {
+      width: 100%;
+      height: 0px;
+      margin-top: 20px;
+      border: 1.5px solid #191919;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+
+    .adbar {
+      overflow: hidden;
+      width: 100%;
+      max-height: 90px;
+      //min-width: 1100px;
+      .adbar-container {
+        @include flex-center;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .ad {
+          border-right: 2px solid #e4e4e4;
+          padding-right: 40px;
+          padding-left: 20px;
+          white-space: nowrap;
+        }
+
+        a {
+          text-decoration: none;
+        }
+        p {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          text-transform: uppercase;
+          color: #1a1a1a;
+
+          @include adbar-breakpoint(l) {
+            font-size: 14px;
+          }
+          @include adbar-breakpoint(md) {
+            font-size: 12px;
+          }
+        }
+
+        .adbar-line {
+          width: 39px;
+          height: 0px;
+          opacity: 0.1;
+          border: 1.5px solid #1a1a1a;
+          transform: rotate(90deg);
+          flex: none;
+          order: 3;
+          flex-grow: 0;
+        }
+      }
+    }
+
+    .adbar-underline {
+      width: 100%;
+      height: 0px;
+      margin-top: 15px;
+      border: 1.5px solid #e4e4e4;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 72px;
+      margin-bottom: 50px;
+
+      @include hero-breakpoint(md) {
+        flex-direction: column;
+      }
+
+      .hero-left {
+        @include flex-center;
+        flex-direction: column;
+        @include hero-breakpoint(md) {
+          margin-top: 50px;
+        }
+
+        .article-title {
+          font-size: 110px;
+          margin: 0;
+          @include hero-breakpoint(l) {
+            font-size: 90px;
+          }
+          @include hero-breakpoint(xmd) {
+            font-size: 60px;
+          }
+          @include hero-breakpoint(sm) {
+            font-size: 70px;
+          }
+          @include hero-breakpoint(xs) {
+            font-size: 40px;
+          }
+        }
+        .hero-left-lower-section {
+          @include flex-center;
+
+          .hero-left-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 350px;
+            @include hero-breakpoint(xxs) {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .h-l-button1 {
+              font-weight: 600;
+              box-sizing: border-box;
+              padding: 8px 16px;
+              width: 125px;
+              height: 40px;
+              border: 2px solid #191919;
+              background: white;
+              margin-right: 20px;
+              @include hero-breakpoint(xxs) {
+                margin-right: 0;
+              }
+            }
+            .h-l-button2 {
+              font-weight: 600;
+              box-sizing: border-box;
+              padding: 8px 16px;
+              width: 204px;
+              height: 40px;
+              border: 2px solid #191919;
+              background: white;
+              @include hero-breakpoint(xxs) {
+                margin-top: 10px;
+              }
+            }
+          }
+
+          .h-l-date {
+            font-size: 16px;
+            color: rgba(186, 186, 186, 1);
+          }
+          flex-direction: column;
+        }
+      }
+      .hero-right {
+        @include flex-center;
+        justify-content: center;
+        @include hero-breakpoint(md) {
+          order: -1;
+        }
+
+        .hero-video {
+          width: 750px;
+          height: 420px;
+          background-color: #dee0e0;
+          @include hero-breakpoint(l) {
+            width: 600px;
+            height: 390px;
+          }
+          @include hero-breakpoint(sm) {
+            height: 250px;
+          }
+        }
+      }
+    }
+
+    .horizontal-video-section {
+      @include flex-center;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 60px;
+      @include horizontal-breakpoint(l) {
+        flex-direction: column;
+      }
+
+      .hor-upper {
+        width: 350px;
+        height: 222px;
+        background: #dee0e0;
+        @include horizontal-breakpoint(xl) {
+          width: 300px;
+          height: 180px;
+        }
+        @include horizontal-breakpoint(l) {
+          width: 370px;
+          height: 232px;
+          margin-top: 10px;
+        }
+        @include horizontal-breakpoint(m) {
+          width: 260px;
+          height: 150px;
+        }
+      }
+      .hor-lower {
+        .hor-date {
+          font-size: 12px;
+          color: rgba(186, 186, 186, 1);
+        }
+
+        .hor-btn {
+          width: 80px;
+          height: 40px;
+          font-weight: 600;
+          box-sizing: border-box;
+          padding: 8px 16px;
+          border: 2px solid #191919;
+          background: white;
+        }
+      }
+    }
+
+    .vertical-video-section {
+      @include flex-center;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 50px;
+      @include vertical-breakpoint(xl) {
+        flex-direction: column;
+      }
+
+      .vvs-left {
+        flex-direction: column;
+        justify-content: space-between;
+
+        .vvs-article {
+          @include flex-center;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 30px;
+
+          .vvs-video {
+            width: 195px;
+            height: 120px;
+            background: #dee0e0;
+            @include vertical-breakpoint(l) {
+              width: 130px;
+              height: 120px;
+            }
+          }
+
+          .vvs-video-info {
+            margin-left: 30px;
+
+            h1 {
+              @include vertical-breakpoint(l) {
+                font-size: 20px;
+              }
+            }
+            .vvs-btn {
+              width: 55px;
+              height: 32px;
+              font-weight: 600;
+              box-sizing: border-box;
+              border: 2px solid #191919;
+              background: white;
+              font-size: 10px;
+            }
+
+            .vvs-date {
+              margin-top: 12px;
+              font-size: 12px;
+              color: rgba(186, 186, 186, 1);
+              @include vertical-breakpoint(l) {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+      .vvs-right {
+        width: 456px;
+        height: 792px;
+        background: #dee0e0;
+        @include vertical-breakpoint(l) {
+          width: 330px;
+          height: 650px;
+        }
+      }
+    }
+    .content-underline {
+      width: 100%;
+      height: 0px;
+      margin-top: 15px;
+      border: 1.5px solid #e4e4e4;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+
+    .footer {
+      @include flex-center;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      @include footer-breakpoint(xl) {
+        flex-direction: column;
+      }
+
+      .footer-right {
+        @include flex-center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          margin-right: 25px;
+          @include footer-breakpoint(xl) {
+            font-size: 12px;
+          }
+          @include footer-breakpoint(l) {
+            margin-right: 5px;
+            font-size: 12px;
+          }
+        }
+
+        .footer-info1 {
+          color: rgba(186, 186, 186, 1);
+        }
+      }
+    }
+
+    //SECOND PAGE SCSS(CSS)
+
+    .middle-section {
+      @include flex-center;
+      justify-content: center;
+      flex-direction: column;
+
+      .start-text {
+        width: 510px;
+        height: 120px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.5;
+        @include secondpage-breakpoint(xl) {
+          display: none;
+        }
+      }
+      .yellow-text {
+        width: 510px;
+        height: 160px;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 1.5;
+        @include secondpage-breakpoint(xl) {
+          display: none;
+        }
+      }
+      .yellow-font {
+        background-color: rgba(255, 249, 173, 1);
+        color: rgba(255, 249, 173, 1);
+      }
+
+      .mid-article {
+        @include flex-center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+          font-size: 72px;
+          @include secondpage-breakpoint(xl) {
+            font-size: 50px;
+          }
+        }
+        .sticker {
+          width: 95px;
+          height: 41px;
+        }
+        .mid-article-buttons {
+          @include flex-center;
+          flex-direction: row;
+          .mid-button1 {
+            font-weight: 600;
+            box-sizing: border-box;
+            padding: 8px 16px;
+            width: 125px;
+            height: 40px;
+            border: 2px solid #191919;
+            background: white;
+            margin-right: 20px;
+          }
+          .mid-button2 {
+            font-weight: 600;
+            box-sizing: border-box;
+            padding: 8px 16px;
+            width: 204px;
+            height: 40px;
+            border: 2px solid #191919;
+            background: white;
+          }
+        }
+        .mid-date {
+          font-size: 16px;
+          color: rgba(186, 186, 186, 1);
+          margin-left: 25px;
+        }
+        .article-video {
+          width: 506.87px;
+          height: 312.88px;
+          background: #dee0e0;
+          @include secondpage-breakpoint(l) {
+            width: 450px;
+            height: 290px;
+          }
+          @include secondpage-breakpoint(m) {
+            width: 350px;
+            height: 290px;
+          }
+        }
+      }
+      .mobile-text {
+        width: 510px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.5;
+        display: none;
+
+        @include secondpage-breakpoint(xl) {
+          display: inline-block;
+        }
+        @include secondpage-breakpoint(l) {
+          width: 400px;
+        }
+        @include secondpage-breakpoint(m) {
+          width: 350px;
+        }
+
+        .mobile-text-span {
+          background-color: rgba(255, 249, 173, 1);
+        }
+      }
+      .big-text {
+        font-size: 18px;
+        width: 500px;
+        @include secondpage-breakpoint(l) {
+          width: 400px;
+        }
+        @include secondpage-breakpoint(m) {
+          width: 350px;
+        }
+        .bold-underline {
+          font-weight: bold;
+          text-decoration: underline;
+        }
+      }
+      .icons {
+        @include flex-center;
+        flex-direction: column;
+        margin-top: 25px;
+
+        h3 {
+          font-weight: bold;
+        }
+        img {
+          height: 48px;
+          width: 48px;
+          margin-top: 25px;
+        }
+      }
+      .sticker {
+        @include secondpage-breakpoint(xl) {
+          display: none;
+        }
+      }
+    }
+  }
+  //end of body
+}
